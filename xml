@@ -24,19 +24,19 @@
             </intent-filter>
         </activity>
 
-        <!-- Mood Tracker aktivnost -->
+        
         <activity android:name=".ui.theme.MoodTrackerActivity" />
 
-        <!-- Tips aktivnost -->
+    
         <activity android:name=".ui.theme.TipsActivity" />
 
-        <!-- Relaxation aktivnost -->
+      
         <activity android:name=".ui.theme.RelaxationActivity" />
 
-        <!-- Resources aktivnost -->
+        
         <activity android:name=".ui.theme.ResourcesActivity" />
 
-        <!-- ExerciseDetailActivity -->
+        
         <activity android:name=".ui.theme.ExerciseDetailActivity" />
     </application>
 
