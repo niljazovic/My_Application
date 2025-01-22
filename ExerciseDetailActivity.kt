@@ -51,7 +51,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
     var isTaskCompleted by remember { mutableStateOf(sharedPrefs.getBoolean(title, false)) }
     var isTimerRunning by remember { mutableStateOf(false) }
 
-    // Odabir pozadinske slike
+    
     val backgroundRes = when (title) {
         "DEEP BREATHING" -> R.drawable.deep_breathing_bg
         "PROGRESSIVE MUSCLE RELAXATION" -> R.drawable.muscle_relaxation_bg
@@ -62,7 +62,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        // Pozadinska slika
+    
         Image(
             painter = painterResource(id = backgroundRes),
             contentDescription = "Background Image",
@@ -77,7 +77,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Box za naslov
+   
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -89,7 +89,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Box za opis
+
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -101,7 +101,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Box za trajanje
+          
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -113,14 +113,13 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Gumb za pokretanje/pauziranje timera
+       
             Button(onClick = { isTimerRunning = !isTimerRunning }) {
                 Text(if (isTimerRunning) "Stop Timer" else "Start Timer")
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Specifični timer unutar Boxa
             if (isTimerRunning) {
                 Box(
                     modifier = Modifier
@@ -138,7 +137,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Gumb za označavanje zadatka kao završenog/nezavršenog
+
             Button(onClick = {
                 isTaskCompleted = !isTaskCompleted
                 sharedPrefs.edit().putBoolean(title, isTaskCompleted).apply()
@@ -154,7 +153,7 @@ fun ExerciseDetailScreen(title: String, description: String, duration: String) {
     }
 }
 
-//timer za disanje
+
 @Composable
 fun DeepBreathingTimer() {
     var timerState by remember { mutableStateOf("Inhale") }
@@ -190,7 +189,7 @@ fun DeepBreathingTimer() {
     }
 }
 
-//timer za opuštanje mišića
+
 @Composable
 fun MuscleRelaxationTimer() {
     var timerState by remember { mutableStateOf("Tense") }
@@ -214,10 +213,10 @@ fun MuscleRelaxationTimer() {
     }
 }
 
-//timer za vježbu promatranja
+
 @Composable
 fun MindfulObservationTimer() {
-    var timeLeft by remember { mutableStateOf(120) } // 2 minute
+    var timeLeft by remember { mutableStateOf(120) } 
 
     LaunchedEffect(Unit) {
         while (timeLeft > 0) {
