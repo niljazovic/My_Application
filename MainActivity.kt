@@ -29,7 +29,6 @@ fun HomeScreen() {
             modifier = Modifier.padding(bottom = 24.dp)
         )
 
-        // Gumb za Mood Tracker
         Button(
             onClick = {
                 context.startActivity(Intent(context, MoodTrackerActivity::class.java))
@@ -39,7 +38,7 @@ fun HomeScreen() {
             Text("Mood Tracker")
         }
 
-        // Gumb za Advices and Quotes
+      
         Button(
             onClick = {
                 context.startActivity(Intent(context, TipsActivity::class.java))
@@ -48,8 +47,8 @@ fun HomeScreen() {
         ) {
             Text("Tips and Quotes")
         }
+        
 
-        // Gumb za Relaxation Exercises
         Button(
             onClick = {
                 context.startActivity(Intent(context, RelaxationActivity::class.java))
@@ -59,7 +58,6 @@ fun HomeScreen() {
             Text("Relaxation Exercises")
         }
 
-        // Gumb za Resources and Help
         Button(
             onClick = {
                 context.startActivity(Intent(context, ResourcesActivity::class.java))
