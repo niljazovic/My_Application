@@ -34,6 +34,6 @@ fun ResourcesScreen() {
             fontSize = 24.sp,
             modifier = Modifier.padding(bottom = 16.dp)
         )
-        // Ovdje možeš dodati resurse za pomoć
+  
     }
 }
