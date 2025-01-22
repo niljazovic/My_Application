@@ -42,7 +42,7 @@ fun MoodTrackerScreen() {
     ) {
         Text("Mood Tracker", fontSize = 24.sp, modifier = Modifier.padding(bottom = 24.dp))
 
-        // TextField za unos raspoloženja
+        
         TextField(
             value = mood,
             onValueChange = { mood = it },
@@ -52,7 +52,7 @@ fun MoodTrackerScreen() {
                 .padding(bottom = 16.dp)
         )
 
-        // TextField za unos bilješke
+       
         TextField(
             value = note,
             onValueChange = { note = it },
@@ -62,7 +62,7 @@ fun MoodTrackerScreen() {
                 .padding(bottom = 16.dp)
         )
 
-        // Gumb za spremanje podataka
+       
         Button(
             onClick = {
                 if (mood.isNotEmpty()) {
@@ -76,7 +76,7 @@ fun MoodTrackerScreen() {
                         .add(moodEntry)
                         .addOnSuccessListener {
                             Toast.makeText(context, "Mood saved!", Toast.LENGTH_SHORT).show()
-                            mood = ""  // Resetiranje unosa
+                            mood = ""  
                             note = ""
                         }
                         .addOnFailureListener { e ->
